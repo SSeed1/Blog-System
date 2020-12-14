@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+        <title>My blog</title>
+    </head>
+    <body>
+        <div class="container">
+            <%- include("partials/navbar.ejs") %>
+            <h1>Profile</h1>
+            <form action="/profile" method="POST">
+                <div class="form-group">
+                    <img src="photos/<%- emp.photo %>" alt="..." class="img-thumbnail" width="147px" height="136px">
+                </div>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" class="form-control" id="name" value="<%- emp.name %>" placeholder="John" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" class="form-control" id="email" value="<%- emp.email %>" placeholder="name@example.com" readonly>
+                </div>
+            </form>
+        </div>
+
+        <script src="/jquery/jquery.min.js"></script>
+        <script src="/bootstrap/js/bootstrap.min.js"></script>
+    </body>
+</html>

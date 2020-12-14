@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <title>Bank-System</title>
+</head>
+<body>
+    <div class="container">
+        <%- include("partials/navbar.ejs") %>
+        <div class="container justify-content-center col-md-6" style="padding-top: 60px;">
+            <div class="card">
+                <div class="card-header"><h2>Registration</h2></div>
+                <div class="card-body">
+
+                    <form action="/register" method="post" encType="multipart/form-data">
+
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
+                            <div class="col-md-6">
+                                <input type="text" id="name" class="form-control" name="name" placeholder="John"
+                                    required>
+                                <div class="invalid-feedback">Please enter your name</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
+                            <div class="col-md-6">
+                                <input type="email" id="email" class="form-control" name="email"
+                                    placeholder="name@example.com" required>
+                                <div class="invalid-feedback">Please enter email</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="message" class="col-md-4 col-form-label text-md-right">Password</label>
+                            <div class="col-md-6">
+                                <input type="password" id="password" class="form-control" name="password" required>
+                                <div class="invalid-feedback">Please enter password</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="message" class="col-md-4 col-form-label text-md-right">Repeat Password</label>
+                            <div class="col-md-6">
+                                <input type="password" id="password-repeat" class="form-control" name="password-repeat"
+                                    required>
+                                <div class="invalid-feedback">Please enter the same password</div>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+	   
+                            <div class="custom-file">
+                           <input type="file" class="custom-file-input" name="photo" id="validatedCustomFile" required>
+                           <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                         </div>
+                           </div>
+                        <div class="col-md-6 offset-md-4">
+                            <button type="submit" class="btn btn-primary" id="register-button">Register</button>
+                            <a href="/login" class="btn btn-link">Go to login</a>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/jquery/jquery.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

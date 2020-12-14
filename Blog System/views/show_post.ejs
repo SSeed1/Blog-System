@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <title>My blog</title>
+</head>
+<body>
+    <div class="container">
+        <form method="post" action="/posts/<%- post['id'] %>/show_post">
+            <%- include("partials/navbar.ejs") %>
+            <h1 style="font-weight: bold"><%- post['title'] %></h1>
+            <p><%- post['content'] %></p>
+            <p style="font-style: italic">by <%- post['author'] %></p>
+            <br>
+            <hr>
+            <div class="form-group">
+                <h3 style="font-weight: bold"><label for="comments">Comments:</label></h3>
+                <div class="card">
+                    <ul class="list-group list-group-flush">
+                        <% comments.forEach(function(comment) { %>
+                        <li class="list-group-item">
+                            <p><%- comment["comm"] %></p>
+                            <p style="font-style: italic; margin-bottom: 0px;">by <%- comment["author"] %></p>
+                        </li>
+                        <% }) %>
+                    </ul>
+                </div>
+            </div>
+            <h3 style="font-weight: bold"><label for="leave-comment">Leave a comment:</label></h3>
+            <div class="form-group">
+                <label for="author">Author</label>
+                <input type="text" name="author" class="form-control" id="author" placeholder="John" required>
+            </div>
+            <div class="form-group">
+                <label for="comment">Comment</label>
+                <textarea name="comm" class="form-control" id="comm" rows="3" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Comment</button>
+        </form>
+
+        <script src="/jquery/jquery.min.js"></script>
+        <script src="/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <title>My blog</title>
+</head>
+<body>
+    <div class="container">
+        <%- include("partials/navbar.ejs") %>
+        <div class="container justify-content-center col-md-6" style="padding-top: 60px;">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Login</h2>
+                </div>
+                <div class="card-body">
+
+                    <% if (error !== "") { %>
+                    <div class="alert alert-danger" role="alert"> <%- error %> </div>
+                    <% } %>
+
+                    <form action="/login" method="post">
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
+                            <div class="col-md-6">
+                                <input type="email" id="email" class="form-control" name="email"
+                                    placeholder="name@example.com" required>
+                                <div class="invalid-feedback">Please enter email</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="message" class="col-md-4 col-form-label text-md-right">Password</label>
+                            <div class="col-md-6">
+                                <input type="password" id="password" class="form-control" name="password" required>
+                                <div class="invalid-feedback">Please enter password</div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-7 offset-md-4">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                            <a href="/register" class="btn btn-link">Forgot Password?</a>
+                        </div>
+
+                        <div class="col-md-6 offset-md-4" style="padding-top: 20px; display: flex">
+                            <p style="font-size: small; padding-right: 10px;">Don't have an account?</p>
+                            <a href="/register" class="btn-link" style="font-size: small;">Register</a>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/jquery/jquery.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
